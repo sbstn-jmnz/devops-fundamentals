@@ -1,4 +1,6 @@
-# Módulo 1: Orientación al Perfil de Especialidades y Metodología del Curso
+---
+title: "Módulo 1: Orientación al Perfil de Especialidades y Metodología del Curso"
+---
 
 Duración: 12 horas
 Código del módulo: MB00171

@@ -1,8 +1,7 @@
 ---
-title: _index
+title: Integración continua
 ---
 
-# Integración continua
 33 horas (Casi 3 semanas)
 ## Competencia
 Implementar un proceso de construcción de software (build) automatizado utilizando herramientas de control de código y gestores de construcción, acorde a las buenas prácticas DevOps de la industria.

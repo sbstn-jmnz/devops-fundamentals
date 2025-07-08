@@ -1,8 +1,6 @@
 ---
-title: _index
+title: Fundamentos y adopción devops
 ---
-
-# Fundamentos y adopción devops
 
 15 Horas (Una semana aproximadamente)
 

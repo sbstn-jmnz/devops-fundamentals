@@ -1,12 +1,10 @@
 +++
-title = "Docs"
+title = "Fundamentos DevOps"
 description = "The documents of the AdiDoks theme."
 sort_by = "weight"
 weight = 1
 template = "docs/section.html"
 +++
-
-# Fundamentos DevOps
 
 ## Descripción de la ocupación y campo laboral asociado.
 Este plan está diseñado para desarrollar las habilidades fundamentales necesarias para participar en la transición de una organización hacia las prácticas DevOps con el objeto de producir productos y servicios de software con mayor rapidez, calidad y a un menor costo. Para esto, el especialista será capaz de facilitar la colaboración y comunicación de los profesionales de las distintas áreas, tales como desarrolladores, operadores y personal de soporte a lo largo del ciclo de vida del software. Asimismo, establecerá mecanismos, prácticas y herramientas conducentes a la integración continua, despliegue continuo y feedback continuo en la organización. El campo laboral corresponde a organizaciones, ya sean públicas o privadas, transversal a todas las industrias (retail, banca, salud, minería, manufactura, servicios), que requieran la producción de productos y servicios de software, o que prestan servicios TI a otras organizaciones.
