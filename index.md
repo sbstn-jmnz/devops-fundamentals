@@ -9,3 +9,15 @@ Egresado de carreras técnicas de nivel superior y/o profesionales de base tecno
 ## Competencia
 Implementar la transición de una organización hacia las prácticas DevOps con el objeto de producir productos y servicios de software con mayor rapidez, calidad y a un menor costo acorde a las buenas prácticas de la industria.
 
+| Número de Módulo | Nombre del Módulo                                        | Horas de Duración |
+|------------------|----------------------------------------------------------|-------------------|
+| Módulo N°1       | Orientación al perfil de especialidades y metodología del curso | 12,00       |
+| Módulo N°2       | Fundamentos y adopción DevOps                             | 15,00             |
+| Módulo N°3       | Integración continua                                      | 33,00             |
+| Módulo N°4       | Automatización de pruebas                                 | 24,00             |
+| Módulo N°5       | Arquitectura y escalabilidad                              | 24,00             |
+| Módulo N°6       | Tecnología Cloud y DevOps                                 | 27,00             |
+| Módulo N°7       | Despliegue y monitoreo continuo                           | 24,00             |
+| Módulo N°8       | Desarrollo de portafolio para especialidades              | 12,00             |
+| Módulo N°9       | Desarrollo de empleabilidad en la industria digital para especialidades | 9,00              |
+| **Total de horas** |                                                          | **180,00**        |
