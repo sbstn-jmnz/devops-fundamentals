@@ -80,10 +80,10 @@ generate_robots_txt = true
 # Configuration of the Markdown rendering
 [markdown]
 # When set to "true", all code blocks are highlighted.
-highlight_code = false
+highlight_code = true
 
 # When set to "true", missing highlight languages are treated as errors. Defaults to false.
-error_on_missing_highlight = false
+error_on_missing_highlight = true
 
 # A list of directories used to search for additional `.sublime-syntax` and `.tmTheme` files.
 extra_syntaxes_and_themes = []
