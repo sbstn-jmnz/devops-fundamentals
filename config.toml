@@ -69,7 +69,7 @@ taxonomies = []
 
 # When set to "true", a search index is built from the pages and section
 # content for `default_language`.
-build_search_index = false
+build_search_index = true
 
 # When set to "false", Sitemap.xml is not generated
 generate_sitemap = true

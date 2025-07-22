@@ -1,6 +1,8 @@
 ---
-title: 03_web
+title: Servicios web
 date: 2025-07-08
+weight: 300
+
 ---
 
 ## Aprendizajes esperados

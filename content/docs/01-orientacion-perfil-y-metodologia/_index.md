@@ -1,5 +1,6 @@
 ---
-title: "Módulo 1: Orientación al Perfil de Especialidades y Metodología del Curso"
+title: "I- Orientación al Perfil y Metodología del Curso"
+weight: 10
 ---
 
 Duración: 12 horas

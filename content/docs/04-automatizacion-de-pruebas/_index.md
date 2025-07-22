@@ -1,9 +1,6 @@
----
-title: Automatización de pruebas
----
-
-## Competencias
-Implementar técnicas de automatización de pruebas al ciclo de integración continua para obtener productos de calidad durante el ciclo de vida DevOps, acorde a las buenas prácticas de la industria.
-
-* 24 horas (2 semanas)
-
++++
+title = "IV- Automatización de pruebas"
+template = "docs/section.html"
+sort_by = "weight"
+weight = 40
++++

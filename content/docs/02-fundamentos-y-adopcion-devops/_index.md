@@ -1,5 +1,7 @@
 ---
-title: Fundamentos y adopción devops
+title: "II- Fundamentos y adopción devops"
+template: docs/section.html
+weight: 20
 ---
 
 15 Horas (Una semana aproximadamente)

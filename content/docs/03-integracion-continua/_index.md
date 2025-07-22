@@ -1,5 +1,6 @@
 ---
-title: Integración continua
+title: "III- Integración continua"
+weight: 30
 ---
 
 33 horas (Casi 3 semanas)

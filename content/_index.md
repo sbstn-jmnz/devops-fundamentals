@@ -15,7 +15,7 @@ repo_url = "https://github.com/aaranxu/adidoks"
 [[extra.menu.main]]
 name = "Docs"
 section = "docs"
-url = "/docs"
+url = "/docs/04-automatizacion-de-pruebas"
 weight = 10
 
 [[extra.list]]
@@ -34,13 +34,13 @@ content = "Implementa procesos de construcción automática de software con Git,
 
 
 [[extra.list]]
-title = "Automatización de Pruebas"
-content = "Aplica pruebas automatizadas con JUnit, SOAPUI, JMeter y Selenium para asegurar calidad en integración continua."
+title = 'Automatización de Pruebas'
+content = '<a href="./docs/04-automatizacion-de-pruebas">Aplica pruebas automatizadas</a> con JUnit, SOAPUI, JMeter y Selenium para asegurar calidad en integración continua.'
 
 
 [[extra.list]]
 title = "Arquitectura y Escalabilidad"
-content = "Analiza principios arquitectónicos modernos, microservicios y escalabilidad de soluciones digitales con enfoque DevOps."
+content = '<a href="./docs/05-arquitectura-y-escalabilidad">Analiza principios arquitectónicos modernos</a>, microservicios y escalabilidad de soluciones digitales con enfoque DevOps.'
 
 
 [[extra.list]]

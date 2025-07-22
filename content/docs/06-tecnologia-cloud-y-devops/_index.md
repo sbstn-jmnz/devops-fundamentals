@@ -1,4 +1,5 @@
 ---
-title: Tecnología cloud y DevOps
+title: "VI- Tecnología cloud y DevOps"
+weight: 60
 ---
 

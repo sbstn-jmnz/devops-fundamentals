@@ -1,3 +1,4 @@
 ---
-title: Despliegue y monitoreo continuo
+title: VII- Despliegue y monitoreo continuo
+weight: 70
 ---

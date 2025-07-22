@@ -1,6 +1,8 @@
 ---
-title: 05_functional
+title: Pruebas funcionales
 date: 2025-07-08
+weight: 500
+
 ---
 
 ## Aprendizajes esperados

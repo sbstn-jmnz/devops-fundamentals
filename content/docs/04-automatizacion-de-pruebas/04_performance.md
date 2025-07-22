@@ -1,6 +1,8 @@
 ---
-title: 04_performance
+title: Rendimiento
 date: 2025-07-08
+weight: 400
+
 ---
 
 ## Aprendizaje esperado
