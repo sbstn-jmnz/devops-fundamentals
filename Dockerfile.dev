@@ -1,6 +1,19 @@
-FROM ghcr.io/getzola/zola:v0.17.1 AS zola
+FROM ubuntu:22.04
 
-COPY . /project
+# Actualizar e instalar dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    curl \
+    tar \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar Zola (versión Linux GNU)
+RUN curl -s -L https://github.com/getzola/zola/releases/download/v0.17.1/zola-v0.17.1-x86_64-unknown-linux-gnu.tar.gz \
+    | tar -xz -C /usr/local/bin zola
+
 WORKDIR /project
+COPY . /project
+
 EXPOSE 1111
-CMD ["serve"]
+
+CMD ["zola", "serve", "--interface", "0.0.0.0", "--port", "1111"]
