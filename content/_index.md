@@ -1,5 +1,5 @@
 +++
-title = "Fundamentos DevOps"
+title = "Fundamentos DevOps Adalid" 
 
 
 # The homepage contents
