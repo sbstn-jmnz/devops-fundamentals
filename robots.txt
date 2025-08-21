@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sbstn-jmnz.github.io/devops-fundamentals//sitemap.xml

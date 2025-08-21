@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" as="font" href="https://sbstn-jmnz.github.io/devops-fundamentals/fonts/vendor/jost/jost-v4-latin-regular.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="https://sbstn-jmnz.github.io/devops-fundamentals/fonts/vendor/jost/jost-v4-latin-700.woff2"  type="font/woff2" crossorigin>
+
+
+<link rel="stylesheet" href="https://sbstn-jmnz.github.io/devops-fundamentals/main.css">
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+  
+  
+  
+    
+  
+  
+  
+  
+    
+  
+  
+  
+
+
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+
+	
+
+
+	
+
+<title>Testing ágil | Fundamentos DevOps</title>
+<meta name="description" content="Pruebas automatizadas">
+<link rel="canonical" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/">
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://sbstn-jmnz.github.io/devops-fundamentals/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://sbstn-jmnz.github.io/devops-fundamentals/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "04 Automatizacion De Pruebas",
+            "item": "https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "01 Intro",
+            "item": "https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/"
+          },
+        
+      
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="theme-color" content="#fff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://sbstn-jmnz.github.io/devops-fundamentals/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://sbstn-jmnz.github.io/devops-fundamentals/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://sbstn-jmnz.github.io/devops-fundamentals/favicon-16x16.png">
+  
+    <link rel="manifest" href="https://sbstn-jmnz.github.io/devops-fundamentals/site.webmanifest" crossorigin>
+  
+
+
+  
+
+</head>
+
+  
+
+<body class="docs single">
+  
+  
+  
+  
+<div class="header-bar fixed-top"></div>
+<header class="navbar fixed-top navbar-expand-md navbar-light">
+	<div class="container">
+		<input class="menu-btn order-0" type="checkbox" id="menu-btn">
+		<label class="menu-icon d-md-none" for="menu-btn"><span class="navicon"></span></label>
+		<a class="navbar-brand order-1 order-md-0 me-auto" href="https://sbstn-jmnz.github.io/devops-fundamentals/">Fundamentos DevOps</a>
+		<button id="mode" class="btn btn-link order-2 order-md-4" type="button" aria-label="Toggle mode">
+			<span class="toggle-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+			<span class="toggle-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+		</button>
+		<ul class="navbar-nav fork-me order-3 order-md-5">
+			
+				<li class="nav-item">
+					<a class="nav-link" href="https://twitter.com/aaranxu"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg><span class="ms-2 visually-hidden">Twitter</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/aaranxu/adidoks"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a>
+				</li>
+			
+		</ul>
+		<div class="collapse navbar-collapse order-4 order-md-1">
+			<ul class="navbar-nav main-nav me-auto order-5 order-md-2">
+				
+					
+				
+				
+				
+				<li class="nav-item">
+					<a class="nav-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/">Docs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/blog/">Blog</a>
+				</li>
+				
+			</ul>
+			<div class="break order-6 d-md-none"></div>
+			
+				<form class="navbar-form flex-grow-1 order-7 order-md-3">
+					<input id="userinput" class="form-control is-search" type="search" placeholder="Search docs..."
+						aria-label="Search docs..." autocomplete="off">
+					<div id="suggestions" class="shadow bg-white rounded"></div>
+				</form>
+			
+		</div>
+	</div>
+</header>
+
+
+
+  
+<div class="wrap container" role="document">
+  <div class="content">
+    <div class="row flex-xl-nowrap">
+	  
+<div class="col-lg-5 col-xl-4 docs-sidebar">
+	<nav class="docs-links" aria-label="Main navigation">
+			
+			
+			
+			
+					
+					
+					
+							<h3>I- Orientación al Perfil y Metodología del Curso</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/01-orientacion-perfil-y-metodologia/00-intro/">Introducción</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/01-orientacion-perfil-y-metodologia/01/">Perfil laboral asociado al plan formativo</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/01-orientacion-perfil-y-metodologia/02/">Composición del plan y portafolio de productos</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/01-orientacion-perfil-y-metodologia/03/">Metodología Bootcamp y aprendizaje activo</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/01-orientacion-perfil-y-metodologia/04/">Sobriedad digital en el desarrollo de software</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>II- Fundamentos y adopción devops</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/00-intro/">Introducción</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/01/">Primero</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/02/">Segundo</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/03/">Tercero</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/04/">Cuarto</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/02-fundamentos-y-adopcion-devops/05/">Quinto</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>III- Integración continua</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/00-intro/">Introducción</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>IV- Automatización de pruebas</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/00-intro/">Introducción</a></li>
+							                           
+									<li><a class="docs-link active" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/">Testing ágil</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/02-unit/">Pruebas unitarias</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/03-web/">Servicios web</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/04-performance/">Rendimiento</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/05-functional/">Pruebas funcionales</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>V- Arquitectura y Escalabilidad</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/01-intro/">Introducción</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/02-conceptos/">Conceptos</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/03-principios-de-diseno/">Principios de diseño</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/04-patrones/">Patrones de diseño</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/05-monolitos-microservicios-contenedores/">Monolitos microservicios y contenedores</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/05-arquitectura-y-escalabilidad/06-escalabilidad-orizontal-vertical/">Escalabilidad horizontal y vertical</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>VI- Tecnología Cloud y DevOps</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/06-tecnologia-cloud-y-devops/01-intro/">Introducción</a></li>
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/06-tecnologia-cloud-y-devops/02/">Segundo</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>VII- Despliegue y monitoreo continuo</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/01-intro/">Introducción</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>VIII- Desarrollo de portafolio para especialidades</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/08-desarrollo-de-portafolio/01-intro/">Introducción</a></li>
+							
+					</ul>
+					
+					
+					
+					
+							<h3>IX- Desarrollo de empleabilidad en la industria digital para especialidades</h3>
+							<ul class="list-unstyled">
+							                           
+									<li><a class="docs-link" href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/09-empleabilidad-industria-digital/01-intro/">Introducción</a></li>
+							
+					</ul>
+					
+					
+			
+	</nav>
+</div>
+
+	  
+  
+  <nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation">
+  	<div class="page-links">
+  			<h3>On this page</h3>
+  			<nav id="TableOfContents">
+  					<ul>
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#1-testing-en-un-entorno-agil">1. Testing en un entorno ágil</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#que-es-agile-testing">¿Qué es Agile Testing?</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#principios-y-practicas-de-agile-testing">Principios y prácticas de Agile Testing</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#el-rol-del-tester-en-marcos-agiles">El rol del tester en marcos ágiles</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#pruebas-en-el-pipeline-de-integracion-continua">Pruebas en el pipeline de integración continua</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#tipos-de-prueba">Tipos de prueba:</a></li>
+  							
+  									<ul>
+  											
+  											<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#unitarias">Unitarias</a></li>
+  											
+  											<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#integracion">Integración</a></li>
+  											
+  											<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#sistema-funcionales-rendimiento">Sistema (funcionales, rendimiento)</a></li>
+  											
+  											<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#aceptacion-y-humo">Aceptación y humo</a></li>
+  											
+  									</ul>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#objetivo-y-beneficios-de-la-automatizacion">Objetivo y beneficios de la automatización</a></li>
+  							
+  							
+  							<li><a href="https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/01-intro/#herramientas-comunes-para-la-automatizacion-de-pruebas">Herramientas comunes para la automatización de pruebas</a></li>
+  							
+  							
+  					</ul>
+  			</nav>
+  	</div>
+  </nav>
+  
+
+      <main class="docs-content col-lg-11 col-xl-9">
+        <h1>Testing ágil</h1>
+        
+        <h2 id="1-testing-en-un-entorno-agil">1. Testing en un entorno ágil</h2>
+<h2 id="que-es-agile-testing">¿Qué es Agile Testing?</h2>
+<p>Agile Testing es un enfoque de pruebas de software que se alinea con los principios del desarrollo ágil. A diferencia de los enfoques tradicionales, donde las pruebas se ejecutan al final del ciclo de desarrollo, en Agile Testing las pruebas se integran desde el inicio y se realizan de forma continua a lo largo del desarrollo del producto.</p>
+<p>Este tipo de pruebas fomenta la colaboración entre testers, desarrolladores y usuarios, y se centra en entregar valor de negocio de forma iterativa. El feedback rápido y la detección temprana de errores son pilares fundamentales, lo que permite ajustar los entregables en tiempo real y mantener la calidad sin frenar la velocidad de entrega.</p>
+<p>Agile Testing no es una técnica específica, sino un enfoque cultural y metodológico que aboga por la integración de la calidad como una responsabilidad compartida dentro del equipo ágil.</p>
+<p><a href="https://martinfowler.com/articles/practical-test-pyramid.html">Testing pyramid</a></p>
+<h2 id="principios-y-practicas-de-agile-testing">Principios y prácticas de Agile Testing</h2>
+<p>Entre los principios más importantes del Agile Testing se encuentran la colaboración continua, el enfoque en la entrega temprana de valor, la retroalimentación constante y la automatización de las pruebas. Los testers trabajan junto con los desarrolladores desde el inicio, ayudando a definir criterios de aceptación y a construir casos de prueba en paralelo con el código.</p>
+<p>Prácticas comunes incluyen Test Driven Development (TDD), Acceptance Test Driven Development (ATDD) y Behaviour Driven Development (BDD), que permiten construir software basado en pruebas desde el diseño. Estas técnicas aseguran que el código cumpla con los requisitos funcionales antes incluso de ser escrito.</p>
+<p>Otro principio esencial es la mejora continua. Los equipos revisan y ajustan regularmente sus procesos de prueba para responder mejor al cambio, reducir el retrabajo y aumentar la eficiencia del ciclo de desarrollo.</p>
+<h2 id="el-rol-del-tester-en-marcos-agiles">El rol del tester en marcos ágiles</h2>
+<p>En un equipo ágil, el rol del tester va mucho más allá de simplemente “probar”. Se convierte en un facilitador de calidad, integrándose al equipo de desarrollo para anticipar defectos, clarificar requisitos y aportar una visión crítica sobre la usabilidad y confiabilidad del sistema.</p>
+<p>El tester participa en ceremonias ágiles como refinamientos, planificaciones y retrospectivas. Aporta una mirada basada en la experiencia del usuario y la validación temprana, sugiriendo estrategias de prueba automatizadas y exploratorias desde el día uno.</p>
+<p>Además, es habitual que el tester en entornos ágiles posea conocimientos técnicos que le permitan colaborar en la escritura de scripts automatizados, configuración de pipelines de testing y monitoreo de calidad continua.</p>
+<h2 id="pruebas-en-el-pipeline-de-integracion-continua">Pruebas en el pipeline de integración continua</h2>
+<p>La integración continua (CI) implica integrar y validar los cambios de código de forma frecuente, idealmente varias veces al día. Las pruebas son una parte crítica de este proceso, ya que aseguran que el nuevo código no introduzca errores ni rompa funcionalidades existentes.</p>
+<p>Dentro del pipeline de CI, las pruebas se ejecutan automáticamente cada vez que se sube nuevo código al repositorio. Estas pruebas incluyen unitarias, de integración, de sistema, de regresión, entre otras. Si alguna de estas pruebas falla, se interrumpe el pipeline, permitiendo actuar de inmediato sobre el error.</p>
+<p>La automatización de pruebas en el pipeline no solo mejora la velocidad del desarrollo, sino que también incrementa la confianza del equipo en la calidad del software entregado. Esto habilita prácticas como entrega continua (CD) y despliegue continuo (CD), donde los cambios llegan más rápido y seguros al entorno productivo.</p>
+<h2 id="tipos-de-prueba">Tipos de prueba:</h2>
+<h3 id="unitarias">Unitarias</h3>
+<p>Las pruebas unitarias validan el comportamiento de unidades pequeñas e independientes de código, como funciones o métodos. Son las más cercanas al desarrollador y permiten detectar errores en etapas tempranas del ciclo de vida del software.</p>
+<p>Su principal ventaja es la rapidez de ejecución y su alta cobertura. Al estar automatizadas, se convierten en la primera línea de defensa contra errores y regresiones. Herramientas como JUnit (Java), pytest (Python) o Mocha (JavaScript) son ampliamente utilizadas para este propósito.</p>
+<p>Las pruebas unitarias deben ser simples, independientes y predecibles. Idealmente, deberían ejecutarse con cada commit y formar parte obligatoria del pipeline de CI.</p>
+<h3 id="integracion">Integración</h3>
+<p>Estas pruebas aseguran que múltiples módulos o componentes de una aplicación funcionen correctamente en conjunto. Se encargan de validar flujos entre clases, capas de arquitectura (como frontend-backend) o interacciones con servicios externos.</p>
+<p>A menudo, las pruebas de integración detectan errores que no son visibles a nivel unitario, como incompatibilidades entre versiones de APIs, mal manejo de datos o errores de configuración. Suelen requerir entornos de prueba más complejos y mayor tiempo de ejecución.</p>
+<p>Su automatización debe planificarse considerando sus dependencias, y pueden implementarse con herramientas como Postman, REST Assured, TestContainers, entre otras.</p>
+<h3 id="sistema-funcionales-rendimiento">Sistema (funcionales, rendimiento)</h3>
+<p>Las pruebas de sistema validan el software como un todo, probando funcionalidades de extremo a extremo desde la perspectiva del usuario. Estas incluyen tanto pruebas funcionales como pruebas no funcionales, como rendimiento, seguridad o accesibilidad.</p>
+<p>Las pruebas funcionales verifican que el sistema haga lo que se espera según los requerimientos definidos. Pueden realizarse con herramientas como Selenium o Cypress.</p>
+<p>Las pruebas de rendimiento, por su parte, buscan identificar cuellos de botella, consumo excesivo de recursos o inestabilidad bajo carga. JMeter es una herramienta común para estas pruebas. Su ejecución frecuente es crucial para garantizar una experiencia de usuario satisfactoria.</p>
+<h3 id="aceptacion-y-humo">Aceptación y humo</h3>
+<p>Las pruebas de aceptación son definidas por el cliente o el Product Owner y validan que el software cumple con los criterios de negocio. Suelen implementarse como pruebas automáticas al final de cada sprint y son clave para validar entregas incrementales.</p>
+<p>Por otro lado, las pruebas de humo son una colección mínima de pruebas que aseguran que el sistema es estable después de una nueva compilación o despliegue. Se enfocan en las funcionalidades más críticas y permiten una validación rápida antes de ejecutar pruebas más exhaustivas.</p>
+<p>Ambos tipos son esenciales para entornos de CI/CD, donde se requiere validación rápida y confiable para cada entrega.</p>
+<h2 id="objetivo-y-beneficios-de-la-automatizacion">Objetivo y beneficios de la automatización</h2>
+<p>El objetivo principal de automatizar pruebas es mejorar la eficiencia, confiabilidad y repetibilidad del proceso de validación del software. Esto permite a los equipos entregar valor continuamente, sin comprometer la calidad.</p>
+<p>La automatización reduce el esfuerzo manual, minimiza los errores humanos y permite ejecutar grandes cantidades de pruebas en menor tiempo. Además, facilita el feedback temprano, lo que es vital para resolver errores antes de que escalen en complejidad y costo.</p>
+<p>Otro beneficio es la capacidad de escalar: a medida que el sistema crece, las pruebas automatizadas permiten mantener la calidad sin requerir proporcionalmente más testers. También proporcionan documentación viva del comportamiento esperado del sistema, ayudando a nuevos integrantes del equipo a entender la lógica del producto.</p>
+<h2 id="herramientas-comunes-para-la-automatizacion-de-pruebas">Herramientas comunes para la automatización de pruebas</h2>
+<p>Existen múltiples herramientas especializadas para distintos tipos de pruebas. Para pruebas unitarias, destacan JUnit (Java), NUnit (.NET), pytest (Python), entre otras. Estas herramientas permiten integrar las pruebas directamente en el entorno de desarrollo y en pipelines de CI.</p>
+<p>Para pruebas funcionales en interfaces web, Selenium y Cypress son ampliamente utilizadas. Selenium permite automatizar navegadores reales, mientras que Cypress es más reciente y se enfoca en pruebas rápidas y consistentes en el frontend.</p>
+<p>Para pruebas de APIs o servicios web, SoapUI y Postman permiten crear suites automatizadas. JMeter es común para pruebas de carga y estrés. Finalmente, herramientas como Jenkins, GitHub Actions o GitLab CI permiten orquestar la ejecución automática de todas estas pruebas en un flujo de integración continua.</p>
+<p>La elección de herramientas dependerá del stack tecnológico, nivel de automatización deseado y recursos disponibles del equipo.</p>
+
+        
+        
+<div class="docs-navigation d-flex justify-content-between">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+            
+              
+              <a href="https:&#x2F;&#x2F;sbstn-jmnz.github.io&#x2F;devops-fundamentals&#x2F;docs&#x2F;03-integracion-continua&#x2F;00-intro&#x2F;">
+                <div class="card my-1">
+                  <div class="card-body py-2">
+                    &larr; Introducción
+                  </div>
+                </div>
+              </a>
+            
+            
+            
+          
+        
+      
+        
+        
+          
+        
+      
+        
+        
+          
+        
+      
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+          
+          
+          <a class="ms-auto" href="https:&#x2F;&#x2F;sbstn-jmnz.github.io&#x2F;devops-fundamentals&#x2F;docs&#x2F;05-arquitectura-y-escalabilidad&#x2F;01-intro&#x2F;">
+            <div class="card my-1">
+              <div class="card-body py-2">
+                Introducción &rarr;
+              </div>
+            </div>
+          </a>
+          
+          
+          
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+      
+      
+        
+      
+    
+  
+</div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+
+  
+    
+<footer class="footer text-muted">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 order-last order-lg-first">
+				<ul class="list-inline">
+					
+						<li class="list-inline-item">Powered by <a href="https://www.netlify.com/">Netlify</a>, <a href="https://www.getzola.org/">Zola</a>, and <a href="https://github.com/aaranxu/adidoks">AdiDoks</a></li>
+					
+				</ul>
+			</div>
+			<div class="col-lg-8 order-first order-lg-last text-lg-end">
+				<ul class="list-inline">
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+  
+
+  
+<script type="text/javascript" src="https://sbstn-jmnz.github.io/devops-fundamentals/js/main.js" defer></script>
+
+  <script type="text/javascript" src="https://sbstn-jmnz.github.io/devops-fundamentals/plugins/elasticlunr.min.js" defer></script>
+  <script type="text/javascript" src="https://sbstn-jmnz.github.io/devops-fundamentals/search_index.es.js" defer></script>
+  <script type="text/javascript" src="https://sbstn-jmnz.github.io/devops-fundamentals/js/search.js" defer></script>
+
+  
+</body>
+</html>
