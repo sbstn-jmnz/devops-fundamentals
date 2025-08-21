@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+# 👇 Esto da permisos de escritura sobre el repo actual
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -23,10 +27,6 @@ jobs:
           container_id=$(docker create zola-site)
           docker cp $container_id:/public ./public
           docker rm $container_id
-
-      - name: Ensure remote is correct
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
