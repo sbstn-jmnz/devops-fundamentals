@@ -5,14 +5,14 @@ on:
     branches:
       - main
 
-# 👇 Esto da permisos de escritura sobre el repo actual
 permissions:
   contents: write
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-
+    outputs:
+      public_dir: ${{ steps.extract.outputs.public_dir }}
     steps:
       - name: Checkout repository (with submodules)
         uses: actions/checkout@v4
@@ -23,10 +23,25 @@ jobs:
         run: docker build -t zola-site .
 
       - name: Extract public folder
+        id: extract
         run: |
+          mkdir -p ./public
           container_id=$(docker create zola-site)
           docker cp $container_id:/public ./public
           docker rm $container_id
+          echo "::set-output name=public_dir::$(pwd)/public"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy public folder from build job
+        run: |
+          mkdir -p ./public
+          cp -r ${{ needs.build.outputs.public_dir }}/* ./public/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
