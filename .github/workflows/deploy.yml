@@ -23,6 +23,10 @@ jobs:
           container_id=$(docker create zola-site)
           docker cp $container_id:/public ./public
           docker rm $container_id
+      
+      - name: Fix git origin to current repo
+        run: |
+          git remote set-url origin https://github.com/${{ github.repository }}.git
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
