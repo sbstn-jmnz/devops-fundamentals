@@ -1,0 +1,30 @@
+name: Build & Deploy Zola with Docker
+
+on:
+  push:
+    branches:
+      - main   # o la rama donde tengas tu código fuente
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t zola-site .
+
+      - name: Extract public folder
+        run: |
+          container_id=$(docker create zola-site)
+          docker cp $container_id:/public ./public
+          docker rm $container_id
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
