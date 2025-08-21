@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "/"
+base_url = "https://sbstn-jmnz.github.io/devops-fundamentals/"
 # The site title and description; used in feeds by default.
 title = "Fundamentos DevOps"
 description = "Curso integral para implementar prácticas DevOps en organizaciones, con foco en integración continua, automatización, cloud computing y cultura ágil."
