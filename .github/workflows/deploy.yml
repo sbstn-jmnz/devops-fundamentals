@@ -3,14 +3,14 @@ name: Build & Deploy Zola with Docker
 on:
   push:
     branches:
-      - main   # o la rama donde tengas tu código fuente
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (with submodules)
         uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -23,10 +23,10 @@ jobs:
           container_id=$(docker create zola-site)
           docker cp $container_id:/public ./public
           docker rm $container_id
-      
-      - name: Fix git origin to current repo
+
+      - name: Ensure remote is correct
         run: |
-          git remote set-url origin https://github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
