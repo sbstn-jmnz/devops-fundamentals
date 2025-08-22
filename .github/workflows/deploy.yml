@@ -36,6 +36,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: build
+    strategy: 
+      fail-fast: false
+      matrix:
+        browser: [chrome,firefox,edge]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,12 +56,21 @@ jobs:
       - name: Start server
         run: npx http-server ./public -p 8080 &
       
-      - name: Run Cypress tests
-        run: npx cypress run --config baseUrl=http://localhost:8080
+      - name: Run Cypress tests on ${{ matrix.browser }}
+        run: npx cypress run --browser${{ matrix.browser }}--config baseUrl=http://localhost:8080
 
+      - name: Upload Cypress results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-results-${{ matrix.browser }}
+          path: |
+            cypress/screenshots
+            cypress/videos
   deploy:
     runs-on: ubuntu-latest
     needs: test
+    if: success()
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
