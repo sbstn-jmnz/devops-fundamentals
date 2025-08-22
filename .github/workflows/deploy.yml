@@ -33,6 +33,28 @@ jobs:
           name: public-folder
           path: ./public
 
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+          path: ./public
+
+      - name: Install dependencies
+        run: npm install cypress http-server
+
+      - name: Start server
+        run: npx http-server ./public -p 8080 &
+      
+      - name: Run Cypress tests
+        run: npx cypress run --config baseUrl=http://localhost:8080
+        
   deploy:
     runs-on: ubuntu-latest
     needs: build
