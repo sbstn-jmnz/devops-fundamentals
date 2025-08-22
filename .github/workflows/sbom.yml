@@ -1,0 +1,30 @@
+name: Generate SBOM
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # 👈 permite lanzarlo manualmente también
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (same as site)
+        run: docker build -t zola-site .
+
+      - name: Generate SBOM with Syft
+        uses: anchore/sbom-action@v0
+        with:
+          image: zola-site:latest   # 👈 analiza la imagen que ya usas
+          format: cyclonedx-json    # o spdx-json / table / text
+          output-file: sbom.json
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.json
