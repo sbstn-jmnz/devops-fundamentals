@@ -57,7 +57,7 @@ jobs:
         run: npx http-server ./public -p 8080 &
       
       - name: Run Cypress tests on ${{ matrix.browser }}
-        run: npx cypress run --browser${{ matrix.browser }}--config baseUrl=http://localhost:8080
+        run: npx cypress run --browser ${{ matrix.browser }} --config baseUrl=http://localhost:8080
 
       - name: Upload Cypress results
         if: failure()
