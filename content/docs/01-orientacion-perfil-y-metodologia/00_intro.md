@@ -3,7 +3,6 @@ title = "Introducción"
 date = "2025-07-08"
 weight = 5
 template = "docs/page.html"
-toc = true
 [extra]
 toc = true
 +++

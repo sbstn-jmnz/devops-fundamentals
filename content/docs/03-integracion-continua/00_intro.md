@@ -1,7 +1,6 @@
 +++
 title = "Introducción"
-date = 2025-07-08
-description = "Pruebas automatizadas"
+description = "Integración continua"
 template = "docs/page.html"
 weight = 90
 sort_by = "weight"
@@ -11,34 +10,27 @@ toc = true
 top = false
 +++
 
-## Competencias
-Implementar técnicas de automatización de pruebas al ciclo de integración continua para obtener productos de calidad durante el ciclo de vida DevOps, acorde a las buenas prácticas de la industria.
-
-* 24 horas (2 semanas)
-
 ## Aprendizajes Esperados
 
-1. Explicar las características fundamentales de las pruebas dentro de un entorno ágil de desarrollo y su rol dentro del ciclo de integración continua.
-2. Implementar una suite de pruebas unitarias en el ciclo de integración continua utilizando JUnit acorde a las buenas prácticas de la industria.
-3. Implementar pruebas unitarias de servicios web al ciclo de integración continua utilizando SoapUI.
-4. Implementar pruebas de rendimiento en el ciclo de integración continua utilizando JMeter.
-5. Implementar pruebas funcionales en el ciclo de integración continua utilizando Selenium.
+1. Explicar los conceptos fundamentales de la integración continua y su importancia en entornos DevOps.  
+2. Implementar pipelines de integración continua que automaticen construcción, pruebas y empaquetado de aplicaciones.  
+3. Configurar repositorios de código y herramientas de automatización para soportar la integración continua.  
+4. Aplicar buenas prácticas de gestión de ramas, versionamiento y control de cambios.  
+5. Integrar pruebas automatizadas en el ciclo de integración continua.  
 
 
 ## Criterios de Evaluación
 
-- Describe las características fundamentales del testing en entornos ágiles.
-- Explica los distintos tipos de pruebas y herramientas asociadas.
-- Implementa pruebas unitarias con JUnit integradas en Jenkins.
-- Configura pruebas de servicios web con SoapUI.
-- Automatiza pruebas de rendimiento con JMeter.
-- Automatiza pruebas funcionales con Selenium.
+- Define integración continua y describe su valor dentro de DevOps.  
+- Configura repositorios y pipelines en herramientas de CI como Jenkins, GitLab CI/CD o similares.  
+- Aplica estrategias de branching y versionamiento semántico.  
+- Implementa la automatización de compilación, pruebas y empaquetado.  
+- Verifica la ejecución de pruebas automatizadas como parte del pipeline.  
 
+## Recursos Técnicos Recomendados
 
-## Índice de Contenidos
-
-1. Testing en un entorno ágil
-2. Pruebas unitarias con JUnit
-3. Pruebas unitarias de servicios web con SoapUI
-4. Pruebas de rendimiento con JMeter
-5. Pruebas funcionales con Selenium
+- Plataformas CI: Jenkins, GitLab CI/CD, GitHub Actions, CircleCI  
+- Repositorios: Git, GitLab, GitHub, Bitbucket  
+- Estrategias de branching: Git Flow, GitHub Flow, Trunk-Based Development  
+- Pruebas: JUnit, PyTest, Mocha, Selenium  
+- Versionamiento: Semantic Versioning (SemVer)  

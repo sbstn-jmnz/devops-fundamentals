@@ -1,11 +1,10 @@
 +++
 title = "Fundamentos DevOps Adalid"
 
-
 # The homepage contents
 [extra]
 lead = "Aprende a integrar desarrollo, operaciones y calidad en un solo flujo de trabajo. Domina las prácticas DevOps más demandadas por la industria."
-url = "/docs"
+url = "/docs/01-orientacion-perfil-y-metodologia/00-intro"
 url_button = "Get started"
 repo_version = "GitHub v0.1.0"             
 repo_license = "Open-source MIT License."
@@ -14,7 +13,7 @@ repo_url = "https://github.com/sbstn-jmnz/devops-fundamentals"
 # Menu items
 [[extra.list]]
 title = "Orientación al Perfil y Metodología del Curso"
-content = '<a href="./docs/01-orientacion-perfil-y-metodologia">Conoce el perfil laboral</a>, el enfoque bootcamp del curso y el impacto de la sobriedad digital en la industria TI.'
+content = '<a href="./docs/01-orientacion-perfil-y-metodologia/00-intro">Conoce el perfil laboral</a>, el enfoque bootcamp del curso y el impacto de la sobriedad digital en la industria TI.'
 
 [[extra.list]]
 title = "Fundamentos y Adopción DevOps ⚡️"
@@ -22,11 +21,11 @@ content = "Explora los principios, cultura, ciclo de vida y estrategias de adopc
 
 [[extra.list]]
 title = "Integración Continua"
-content = "Implementa procesos de construcción automática de software con Git, Maven, Jenkins, SonarQube y herramientas DevSecOps."
+content = '<a href="./docs/03-integracion-continua/00-intro">Implementa procesos de construcción automática de software</a> con Git, Maven, Jenkins, SonarQube y herramientas DevSecOps.'
 
 [[extra.list]]
 title = 'Automatización de Pruebas'
-content = '<a href="./docs/04-automatizacion-de-pruebas">Aplica pruebas automatizadas</a> con JUnit, SOAPUI, JMeter y Selenium para asegurar calidad en integración continua.'
+content = '<a href="./docs/04-automatizacion-de-pruebas/00-intro">Aplica pruebas automatizadas</a> con JUnit, SOAPUI, JMeter y Selenium para asegurar calidad en integración continua.'
 
 [[extra.list]]
 title = "Arquitectura y Escalabilidad"
