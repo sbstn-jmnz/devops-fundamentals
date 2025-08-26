@@ -61,7 +61,21 @@
     </url>
     <url>
         <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/00-intro/</loc>
-        <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/01-fundamentos/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/02-herramientas/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/03-repos-y-pipelines/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/04-branching-y-versionamiento/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/03-integracion-continua/05-pruebas-automatizadas/</loc>
     </url>
     <url>
         <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/04-automatizacion-de-pruebas/</loc>
@@ -132,8 +146,23 @@
         <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/</loc>
     </url>
     <url>
-        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/01-intro/</loc>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/00-intro/</loc>
         <lastmod>2025-07-08</lastmod>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/01-entrega-continua/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/02-pipelines/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/03-despliegue-seguro/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/04-monitoreo-y-devops/</loc>
+    </url>
+    <url>
+        <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/07-despliegue-y-monitoreo-continuo/05-metricas-y-alertas/</loc>
     </url>
     <url>
         <loc>https://sbstn-jmnz.github.io/devops-fundamentals/docs/08-desarrollo-de-portafolio/</loc>
